@@ -1,0 +1,1 @@
+Admin.create([{ :username => 'suprajas', :email => "suprajas@gmail.com", :password => "123qwe"}])

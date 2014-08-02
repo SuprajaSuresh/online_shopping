@@ -1,0 +1,16 @@
+<div class="content">
+	<h3>Hi <%= @user.first_name.capitalize %>,
+	<p> This website shall help you purchase your favourite products across various categories online </p>
+	<p> The menu bar at the top right corner of the page will help do buy the products </p>
+	<p> You can pick a category and then select any product listed there </p>
+	<p> Add your products to your cart and then Checkout! </p></h3>
+</div>
+
+<div class="content">
+	<h3><i> Purchase History </i></p></h3>
+	<% unless @purchases.empty? %>
+		<%= render :partial => 'purchase_history', :locals => {:purchases => @purchases} %>
+	<% else %>
+		<p> You have not bought any products yet </p>
+	<% end %>
+</div>

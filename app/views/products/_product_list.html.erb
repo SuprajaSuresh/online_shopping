@@ -1,0 +1,14 @@
+<table class="category-products-table"> 
+	<tr>
+		<th> Product </th>
+		<th> Price </th>
+		<th> Category </th>
+	</tr>
+	<% products.each do |product| %>
+		<tr>
+			<td><%= link_to product.name.capitalize, product_path(product), :target => '_blank' %></td>
+			<td><%= format_price(product.price) %></td>
+			<td><%= find_category(product) %></td>
+		</tr>
+	<% end %>
+</table>

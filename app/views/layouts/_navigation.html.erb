@@ -1,0 +1,31 @@
+<div class="header">  
+  <nav class="navigation">
+    <h3 class="left"> ONLINE SHOPPING </h3>
+    <div class="right nav-items">
+      <%if admin_signed_in? %>  
+        Admin |
+        <%= link_to 'Home', admin_path(current_admin) %> |
+      <% elsif user_signed_in? %>
+        <%= current_user.first_name.capitalize %> |
+        <%= link_to 'Home', user_path(current_user) %> |
+      <% end %>
+      <%= link_to 'Categories', categories_path() %> |
+      <%= link_to 'Products', products_path() %> |
+      <% if user_signed_in? %>
+        <%= link_to 'Cart', user_purchases_path(current_user) %> 
+        <% notify_cart = current_user.purchases.pending_checkout.count %>
+        <% if notify_cart >= 2 %>
+          <span class='purchase-count'>
+            <%= link_to(notify_cart, user_purchases_path(current_user)) %> 
+          </span>
+        <% end %>
+        |
+      <% end %>
+      <% if current_user || current_admin %>
+        <%= link_to 'Logout', destroy_admin_session_path %>
+      <% else %>
+        <%= link_to 'Login', root_path %>
+      <% end %>
+    </div>
+  </nav>
+</div>

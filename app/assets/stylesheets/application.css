@@ -1,0 +1,87 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+.navigation {
+	background-color: #3E2DF4;
+	height: 30px;
+	font-weight: bold;
+}
+.nav-items {
+	margin: 5px;
+}
+.right {
+	float:right;
+}
+.left {
+	float: left;
+}
+.navigation a{
+	text-decoration: none;
+	color: #FFF;
+	margin: 5px;
+}
+.navigation h3{
+	text-decoration: none;
+	color: #FFF;
+	margin: 5px 3px;
+}
+.content{
+	border: 2px solid #3E2DF4;
+	box-shadow: inset 3px 3px 5px 0px rgba(0,0,0,3);
+	padding: 0.5%;
+	padding-left: 2%;
+	margin: 1%;
+}
+.admin-section p{
+	margin-left: 5px;
+}
+.submit-button {
+	background-color: #3E2DF4;
+	border-radius: 6px;
+	border: 1px solid #057FD0;
+	cursor: pointer;
+	color: #FFF;
+	padding: 6px 24px;
+	text-shadow: 0px -1px 0px #5B6178;
+}
+.text-box-a {
+	height: 22px; 
+}
+.text-area-a {
+	height: 50px;
+	width: 290px;
+}
+.form-component {
+	margin: 10px;
+}
+.check-box-a {
+	height: 30px;
+	margin-left: 10px;
+}
+.category-products-table, .purchase-history-table, .purchases-table {
+	width: 80%;
+	text-align: center;
+}
+th {
+	font-style: italic;
+	color: #3E2DF4;
+}
+.purchase-count {
+	background: red;
+	height: 20px;
+	width: 20px;
+	font-size: 12px;
+}
+.alert-box {
+	background-color: yellow;
+}

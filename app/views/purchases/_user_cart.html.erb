@@ -1,0 +1,16 @@
+<table class="purchases-table">
+	<tr>
+		<th> Product </th>
+		<th> Category </th>
+		<th> Price </th>
+		<th> Purchased on </th>
+	</tr>
+	<% purchases.each do |purchase| %>
+		<tr>
+			<td> <%= find_product(purchase) %> </td>
+			<td> <%= find_category(purchase.product) %> </td>
+			<td> <%= format_price(find_price(purchase)) %> </td>
+			<td> <%= format_date(purchase.created_at) %> </td>
+		</tr>
+	<% end %>
+</table>	

@@ -1,0 +1,14 @@
+<div class="content">
+	<h1><%= @product.name.capitalize %></h1>
+	<p> <b><i> Category: </i></b><%= find_category(@product) %> </p>
+	<p> <b><i> Price: </i></b><%= format_price(@product.price) %> </p>
+	<p> <b><i> Description: </i></b><%= @product.description %> </p>
+	<% if user_signed_in? %>
+		<%= form_for([@product, @product.purchases.build]) do |f| %>
+			<%= f.hidden_field :product_id, :value => @product.id %>
+			<%= f.submit "Buy", :class => "submit-button" %>
+		<% end %>
+	<% elsif admin_signed_in? %>
+		<%= link_to "Edit", edit_product_path(@product) %>
+	<% end %>
+</div>

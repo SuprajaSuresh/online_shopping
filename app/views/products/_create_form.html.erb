@@ -1,0 +1,19 @@
+<div class="content">
+	<h2 align= "center"> <i> Add new product </i> </h2>
+	<%= form_for :product do |f| %>
+		
+		<div class="form-component"><b><%= f.label :category, :class => "left" %></b>
+		<%= f.select :category_id, options_from_collection_for_select(@categories, "id", "name"), :class => "check-box-a" %></div>
+
+		<div class="form-component"><b><%= f.label :name %>&nbsp;</b>
+	  <%= f.text_field :name, autofocus: true %></div>
+
+	  <div class="form-component"><b><%= f.label :description %></b><br />
+	  <%= f.text_area :description, :class => "text-area-a" %></div>
+
+	  <div class="form-component"><b><%= f.label :price %></b>&nbsp;
+	  <%= f.text_field :price %></div>
+
+	  <div><%= f.submit "Save", :class => "submit-button" %></div>
+	<% end %>
+</div>

@@ -1,0 +1,8 @@
+<div class="content">
+	<% unless @purchases.empty? %>
+		<%= render :partial => 'purchases/user_cart', :locals => {:purchases => @purchases} %>
+		<%= button_to "Checkout" ,checkout_products_purchases_path(:purchase_ids => @purchase_array), :method => :put, :class => "submit-button", :onclick => 'alert("Thank you for purchasing in our site.")'%>
+	<% else %>
+		<p> Your cart is empty! Purchase some items from the available products and come here to check them out. </p>
+	<% end %>
+</div>

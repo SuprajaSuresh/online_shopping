@@ -1,0 +1,10 @@
+<h1><%= @category.name.capitalize %></h1>
+<div class="content">
+	<% unless @products.empty? %>
+		<% @products.each do |product| %>
+			<p> <%= link_to product.name.capitalize, product_path(product), :target => '_blank' %> </p>
+		<% end %>
+	<% else %>
+		<p> There are no products in this category </p>
+	<% end %>
+</div>
